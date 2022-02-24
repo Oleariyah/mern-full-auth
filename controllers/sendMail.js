@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer')
-const {google} = require('googleapis')
-const {OAuth2} = google.auth;
+const { google } = require('googleapis')
+const { OAuth2 } = google.auth;
 const OAUTH_PLAYGROUND = 'https://developers.google.com/oauthplayground'
 
 const {
@@ -39,11 +39,11 @@ const sendEmail = (to, url, txt) => {
     const mailOptions = {
         from: SENDER_EMAIL_ADDRESS,
         to: to,
-        subject: "DevAT Channel",
+        subject: "Arabank Full Auth",
         html: `
             <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the DevAT channel.</h2>
-            <p>Congratulations! You're almost set to start using DEVAT✮SHOP.
+            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the ARABANK channel.</h2>
+            <p>Congratulations! You're almost set to start using ARABANK✮SHOP.
                 Just click the button below to validate your email address.
             </p>
             
@@ -57,7 +57,7 @@ const sendEmail = (to, url, txt) => {
     }
 
     smtpTransport.sendMail(mailOptions, (err, infor) => {
-        if(err) return err;
+        if (err) return err;
         return infor
     })
 }
